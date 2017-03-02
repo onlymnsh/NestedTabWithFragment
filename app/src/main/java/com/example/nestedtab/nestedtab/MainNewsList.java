@@ -17,18 +17,17 @@ import java.util.List;
 
 public class MainNewsList extends Fragment {
 
-    LinearLayout mainLayout;
     TabLayout tabs;
     ViewPager vpNews;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mainLayout = (LinearLayout) inflater.inflate(R.layout.scrollable_tab, container, false);
-        tabs = (TabLayout) mainLayout.findViewById(R.id.tabScrollable);
-        vpNews = (ViewPager) mainLayout.findViewById(R.id.vpNews);
+        View view =  inflater.inflate(R.layout.scrollable_tab, container, false);
+        tabs = (TabLayout) view.findViewById(R.id.tabScrollable);
+        vpNews = (ViewPager) view.findViewById(R.id.vpNews);
         setUpPager();
-        return mainLayout;
+        return view;
     }
 
     private void setUpPager() {
